@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Button, OutlineButton } from "../styled/Button";
 import Rules from "./Rules";
 
-const GamePlay = () => {
+const GamePlay = ({toggle}) => {
   const [score, setScore] = useState(0);
   const [selectedNumber, setSelectedNumber] = useState();
   const [currentDice, setCurrentDice] = useState(1);
@@ -53,6 +53,7 @@ const GamePlay = () => {
       <RoleDice currentDice={currentDice} roleDice={roleDice} />
       <div className="btns">
         <OutlineButton onClick={resetScore}>Reset Score</OutlineButton>
+        <Button onClick={toggle}>Exit Game</Button>
         <Button onClick={() => setShowRules((prev) => !prev)}>
           {showRules ? "Hide" : "Show"} Rules
         </Button>
